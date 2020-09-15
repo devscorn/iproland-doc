@@ -116,7 +116,9 @@ section p {
 .center {
   text-align: center;
 }
-
+section{
+  padding: 30px 0;
+}
 .title {
   margin: 50px 0 30px;
 }
@@ -159,8 +161,7 @@ ol li {
 }
 
 .left-sidebar {
-  background: #f3f3f3;
-  background: linear-gradient(45deg,#f3676d 0%,#fda44e 50%,#fda44e 51%,#fec945 100%);
+  background: #333;
   float: left;
   min-height: 100%;
   position: fixed;
@@ -193,7 +194,7 @@ ol li {
 
 .left-nav ul li a:hover,
 .left-nav ul li .current {
-  background-color: #fec945;
+  background-color: #000;
   color: #fff;
 }
 
