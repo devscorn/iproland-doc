@@ -111,16 +111,16 @@
 				<code class="mr-b-30">Every image or media size should under 1MB</code>
 			</section>
 			<section class="content-header">
-				<h1>What Inside of Cryptik &amp; How to configure</h1>
+				<h1>What Inside of iProland &amp; How to configure</h1>
 			</section>
 			<section id="template-inside">
 				<h2 class="title">How to configure &amp; Install Packages</h2>
 				<p>
-					When you get Cryptik.zip file form Themeforest first needt to unzip the file you will find two folder, <br/>
-					one folder contain Cryptik-Nextjs version and other file contain Cryptik-Gatsby version.
+					When you get iProland.zip file form Themeforest first needt to unzip the file you will find two folder, <br/>
+					one folder contain iProland-Nextjs version and other file contain iProland-Gatsby version.
 				</p>
 				<h3 class="sub-title">
-					Cryptik run in <a href="https://nextjs.org/" class="next" target="_blank"> Next.js </a>server
+					iProland run in <a href="https://nextjs.org/" class="next" target="_blank"> Next.js </a>server
 				</h3>
 				<ol>
 					<li>First go-to in next-landing folder</li>
@@ -130,17 +130,20 @@
 				<p class="content-list">
 					Then , please go to address localhost:7070 on your browser and You will find default landing
 					page.<br />Similarly <br />
-					localhost:7070/ for Default Home Page </br>
-					localhost:7070/home-two for Home-two Page </br>
-					localhost:7070/home-three for Home-three Page </br>
+					localhost:7070/ for Watch Landing Page </br>
+					localhost:7070/mobile for mobile Landing Page </br>
+					localhost:7070/cycle for cycle Landing Page </br>
 					localhost:7070/blog-grid for Blog-Grid Page </br>
 					localhost:7070/blog-list for Blog-List Page </br>
-					localhost:7070/blog-full for Blog-Full Page </br>
 					localhost:7070/blog-single for Blog-Single Page </br>
+					localhost:7070/about for about Page </br>
+					localhost:7070/ratting for ratting Page </br>
+					localhost:7070/team for team Page </br>
+					localhost:7070/product-single for product-single Page </br>
 				</p>
 
 				<h3 class="sub-title">
-					Cryptik run in <a href="https://www.gatsbyjs.org/" class="gatsby" target="_blank"> Gatsby.js
+					iProland run in <a href="https://www.gatsbyjs.org/" class="gatsby" target="_blank"> Gatsby.js
 					</a>server
 				</h3>
 				<ol>
@@ -151,13 +154,16 @@
 				<p class="content-list">
 					Then , please go to address localhost:8000 on your browser and You will find default landing
 					page.<br />Similarly <br />
-					localhost:8000/ for Default Home Page </br>
-					localhost:8000/home-two for Home-two Page </br>
-					localhost:8000/home-three for Home-three Page </br>
+					localhost:8000/ for Watch Landing Page </br>
+					localhost:8000/mobile for mobile Landing Page </br>
+					localhost:8000/cycle for cycle Landing Page </br>
 					localhost:8000/blog-grid for Blog-Grid Page </br>
 					localhost:8000/blog-list for Blog-List Page </br>
-					localhost:8000/blog-full for Blog-Full Page </br>
 					localhost:8000/blog-single for Blog-Single Page </br>
+					localhost:8000/about for about Page </br>
+					localhost:8000/ratting for ratting Page </br>
+					localhost:8000/team for team Page </br>
+					localhost:8000/product-single for product-single Page </br>
 				</p>
 				<h3 class="sub-title">
 					next-landing folder Structure
@@ -171,6 +177,62 @@
 					<li>src</li>
 				</ol>
 				<h4 class="mini-sub-title styled-text">
+					In pages folder
+				</h4>
+				<div class="p-l-20">
+					<p>
+						In this folder , you will find the pages folder of next js and next configuration files.
+						If you want to change something in next js folder , change here .
+					</p>
+					<h4 class="mini-sub-title">
+						pages
+					</h4>
+					<p>
+						As we have used next.js , we have a script to your package.json like this:
+					</p>
+					<pre class="brush: html">
+						{
+						    "scripts": {
+							"dev": "next -p 7070", 
+							"start": "next start",  
+							"now-build": "next build && next export -o dist",
+							"netlify-build": "next build && next export",
+							"firebase-dev": "npm run dev:client & npm run dev:server",
+							"firebase-dev:client": "next src/client",
+							"firebase-dev:server": "babel src/server --out-dir dist/server --source-maps --watch",
+							"firebase-build:client": "next build src/client",
+							"firebase-build:server": "babel src/server --out-dir dist/server --source-maps",
+							"firebase-build": "npm run build:client && npm run build:server",
+							"firebase-preserve": "npm run build",
+							"firebase-serve": "cross-env NODE_ENV=production firebase serve --only functions,hosting",
+							"firebase-predeploy": "rimraf dist/ && npm run build",
+							"firebase-deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting"
+							}
+						}
+					</pre>
+					<p class="content-list">
+						After that, the file-system is the main API. Every .js file becomes a route that gets
+						automatically processed and rendered.<br />
+
+						Please have a look at this link <a target="_blank"
+							href="https://nextjs.org/docs/">https://nextjs.org/docs/ </a> for a quick look. You will
+						understand the basic things so quickly.<br />
+
+						As we have Three Product landing pages, three blog pages, four others pages named index, mobile, cycle, blog-grid,
+						blog-list, blog-single, about, team, ratting, product-single so we have ten js files named:
+						<span>index.js</span> for Watch landing Page. <br />
+						<span>mobile.js </span> for Mobile landing Page. <br />
+						<span>cycle.js</span> for cycle landing Page. <br />
+						<span>blog-grid.js</span> for Blog Grid Page. <br />
+						<span>blog-list.js</span> for Blog List Page. <br />
+						<span>blog-single.js</span> for Blog-Single Page .<br />
+						<span>about.js</span> for About  Page .<br />
+						<span>ratting.js</span> for Ratting Page .<br />
+						<span>team.js</span> for Team  Page .<br />
+						<span>product-single.js</span> for Single-product Page .<br />
+					</p>
+				</div>
+				<h4 class="mini-sub-title styled-text">
 					In src folder
 				</h4>
 				<div class="p-l-20">
@@ -183,27 +245,26 @@
 						<li>components</li>
 						<li>reusecore</li>
 						<li>sections</li>
-						<li>Theme</li>
+						<li>theme</li>
 					</ol>
 					<p>Now, we will discuss about each and every folders and their tasks .</p>
 					<h4 class="mini-sub-title">
 						assets
 					</h4>
 					<p>
-						In assets folder, you will find the data, images and theme folder. In data folder, you will find all of data 
+						In assets folder, you will find the data, images folder. In data folder, you will find all of data 
 						uses in this template. You will also find the image folder, where all of the images are
-						kept on the basis of the specific page. In theme folder, you will find all of themeing uses in this template. 
+						kept on the basis of the specific page.
 					</p>
 					<h4 class="mini-sub-title">
 						components
 					</h4>
 					<p>
-						Here all the Components we use in Cryptik.
+						Here all the Components we use in iProland.
 					</p>
 					<h4 class="mini-sub-title">
 						reusecore
 					</h4>
-					
 					<p class="content-list">
 						reusecore folder is most importantly use, you will find some basic components like Layout,
 						Button, Counter, Navigation etc.
@@ -223,9 +284,12 @@
 					</p>
 					
 					<h4 class="mini-sub-title">
+						section
+					</h4>
+					<p>
 						After entering to sections folder, You
 						will find:
-					</h4>
+					</p>
 					<ol>
 						<li>blog</li>
 						<li>common</li>
@@ -265,19 +329,19 @@
 							cycle
 						</h4>
 						<p>
-							cycle contain all cycle lnading sections
+							cycle folder contain all cycle landing sections
 						</p>
 						<h4 class="mini-sub-title">
 							mobile
 						</h4>
 						<p>
-							mobile contain all mobile lnading sections
+							mobile folder contain all mobile landing sections
 						</p>
 						<h4 class="mini-sub-title">
 							watch
 						</h4>
 						<p>
-							watch contain all watch lnading sections
+							watch folder contain all watch landing sections
 						</p>
 						<h4 class="mini-sub-title">
 							essentialPages
@@ -292,57 +356,12 @@
 							<li>team</li>
 						</ol>
 					</div>
-				</div>
-				<h4 class="mini-sub-title styled-text">
-					In pages folder
-				</h4>
-				<div class="p-l-20">
-					<p>
-						In this folder , you will find the pages folder of next js and next configuration files.
-						If you want to change something in next js folder , change here .
-					</p>
 					<h4 class="mini-sub-title">
-						pages
+						theme
 					</h4>
 					<p>
-						As we have used next.js , we have a script to your package.json like this:
-					</p>
-					<pre class="brush: html">
-						{
-						  "scripts": {
-							"dev": "next dev",
-							"start": "next start",
-							"now-build": "next build && next export -o dist",
-							"firebase-dev": "npm run dev:client & npm run dev:server",
-							"firebase-dev:client": "next src/client",
-							"firebase-dev:server": "babel src/server --out-dir dist/server --source-maps --watch",
-							"firebase-build:client": "next build src/client",
-							"firebase-build:server": "babel src/server --out-dir dist/server --source-maps",
-							"firebase-build": "npm run build:client && npm run build:server",
-							"firebase-preserve": "npm run build",
-							"firebase-serve": "cross-env NODE_ENV=production firebase serve --only functions,hosting",
-							"firebase-predeploy": "rimraf dist/ && npm run build",
-							"firebase-deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting"
-						  }
-						}
-					</pre>
-					<p class="content-list">
-						After that, the file-system is the main API. Every .js file becomes a route that gets
-						automatically processed and rendered.<br />
-
-						Please have a look at this link <a target="_blank"
-							href="https://nextjs.org/docs/">https://nextjs.org/docs/ </a> for a quick look. You will
-						understand the basic things so quickly.<br />
-
-						As we have Three landing pages and three blog pages named index, classic, modern, blog-grid,
-						blog-list, blog-single so we have seven js files named:
-						<span>index.js</span> for Default Home Page. <br />
-						<span>home-two.js </span> for Home-Two Page. <br />
-						<span>home-three.js</span> for Home Three Page. <br />
-						<span>home-four.js</span> for Home Four Page. <br />
-						<span>blog-grid.js</span> for Blog Grid Page. <br />
-						<span>blog-list.js</span> for Blog List Page. <br />
-						<span>blog-single</span> for Blog-Single Page .<br />
+						In theme folder, you will find all of themeing uses in this template. <br/>
+						Here all themeing elements, we use in iProland.If you need color related customization, you can menage it from here. 
 					</p>
 				</div>
 				<h3 class="sub-title">
@@ -369,68 +388,72 @@
 						<li>pages</li>
 						<li>reusecore</li>
 						<li>sections</li>
+						<li>theme</li>
 					</ol>
 					<p>Now, we will discuss about each and every folders and their tasks .</p>
 					<h4 class="mini-sub-title">
 						assets
 					</h4>
 					<p>
-						In assets folder, you will find the data, images and theme folder. In data folder, you will find all of data 
+						In assets folder, you will find the data, images . In data folder, you will find all of data 
 						uses in this template. You will also find the image folder, where all of the images are
-						kept on the basis of the specific page. In theme folder, you will find all of themeing uses in this template. 
+						kept on the basis of the specific page.
 					</p>
 					<h4 class="mini-sub-title">
 						components
 					</h4>
 					<p>
-						Here all the Components we use in Cryptik.
+						Here all the Components we use for gatsby in iProland.
 					</p>
-					<h4 class="mini-sub-title">
-						pages
+					<h4 class="mini-sub-title styled-text">
+						in pages folder
 					</h4>
 					<div class="p-l-20">
 						<p>
-							In this folder , you will find the pages folder of next js and next configuration files.
-							If you want to change something in next js folder , change here .
+							In this folder , you will find the pages folder of gatsby and gatsby configuration files.
+							If you want to change something in gatsby folder , change here .
 						</p>
 						<h4 class="mini-sub-title">
 							pages
 						</h4>
 						<p>
-							As we have used next.js , we have a script to your package.json like this:
+							As we have used gatsby , we have a script to your package.json like this:
 						</p>
 						<pre class="brush: html">
 							"scripts": {
 								"build": "gatsby build",
 								"develop": "gatsby develop",
-								"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 								"dev": "npm run develop",
+								"start": "npm run develop",
 								"serve": "gatsby serve",
 								"clean": "gatsby clean",
-								"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+								"now-build": "yarn run build",
+								"format": "prettier --write \"**/*.{js,jsx,json,md}\""
 							}
 						</pre>
 						<p class="content-list">
 							After that, the file-system is the main API. Every .js file becomes a route that gets
 							automatically processed and rendered.<br />
-	
 							Please have a look at this link <a target="_blank"
-								href="https://nextjs.org/docs/">https://nextjs.org/docs/ </a> for a quick look. You will
+								href="https://www.gatsbyjs.com/">https://www.gatsbyjs.com/ </a> for a quick look. You will
 							understand the basic things so quickly.<br />
 	
-							As we have Three landing pages and three blog pages named index, classic, modern, blog-grid,
-							blog-list, blog-single so we have seven js files named:
-							<span>index.js</span> for Default Home Page. <br />
-							<span>home-two.js </span> for Home-Two Page. <br />
-							<span>home-three.js</span> for Home Three Page. <br />
-							<span>home-four.js</span> for Home Four Page. <br />
+							As we have Three Product landing pages, three blog pages, four others pages named index, mobile, cycle, blog-grid,
+							blog-list, blog-single, about, team, ratting, product-single so we have ten js files named:
+							<span>index.js</span> for Watch landing Page. <br />
+							<span>mobile.js </span> for Mobile landing Page. <br />
+							<span>cycle.js</span> for cycle landing Page. <br />
 							<span>blog-grid.js</span> for Blog Grid Page. <br />
 							<span>blog-list.js</span> for Blog List Page. <br />
-							<span>blog-single</span> for Blog-Single Page .<br />
+							<span>blog-single.js</span> for Blog-Single Page .<br />
+							<span>about.js</span> for About  Page .<br />
+							<span>ratting.js</span> for Ratting Page .<br />
+							<span>team.js</span> for Team  Page .<br />
+							<span>product-single.js</span> for Single-product Page .<br />
 						</p>
 					</div>
 					<p>
-						Here all the Components we use in Cryptik.
+						Here all the Components we use in iProland.
 					</p>
 					<h4 class="mini-sub-title">
 						reusecore
@@ -453,17 +476,90 @@
 						By using these basic components, you can write custom components according to your need.
 					</p>
 					<h4 class="mini-sub-title">
-						sections
+						section
 					</h4>
 					<p>
-						Here all the section include that’s we are used in our template like banner, about, features,
-						news, wallet, Fund, FAQ etc etc for <code>nextjs</code> version.
+						After entering to sections folder, You
+						will find:
+					</p>
+					<ol>
+						<li>blog</li>
+						<li>common</li>
+						<li>cycle</li>
+						<li>essentialPages</li>
+						<li>mobile</li>
+						<li>watch</li>
+					</ol>
+					<div class="p-l-20">
+						<h4 class="mini-sub-title">
+							blog
+						</h4>
+						<p>
+							all blog layouts here, like: <br/>
+						</p>
+						<ol>
+							<li>blog-grid</li>
+							<li>blog-list</li>
+							<li>blog-single</li>
+							<li>blog-sidebar</li>
+						</ol>
+						<h4 class="mini-sub-title">
+							common
+						</h4>
+						<p>
+							all common section are here, like: <br/>
+						</p>
+						<ol>
+							<li>contact</li>
+							<li>footer</li>
+							<li>navigation</li>
+							<li>news</li>
+							<li>pageHeader</li>
+							<li>testimonial</li>
+						</ol>
+						<h4 class="mini-sub-title">
+							cycle
+						</h4>
+						<p>
+							cycle folder contain all cycle landing sections
+						</p>
+						<h4 class="mini-sub-title">
+							mobile
+						</h4>
+						<p>
+							mobile folder contain all mobile landing sections
+						</p>
+						<h4 class="mini-sub-title">
+							watch
+						</h4>
+						<p>
+							watch folder contain all watch landing sections
+						</p>
+						<h4 class="mini-sub-title">
+							essentialPages
+						</h4>
+						<p>
+							all essentialPages section are here, like: <br/>
+						</p>
+						<ol>
+							<li>about</li>
+							<li>product</li>
+							<li>ratting</li>
+							<li>team</li>
+						</ol>
+					</div>
+					<h4 class="mini-sub-title">
+						theme
+					</h4>
+					<p>
+						In theme folder, you will find all of themeing uses in this template. <br/>
+						Here all themeing elements, we use in iProland.If you need color related customization, you can menage it from here. 
 					</p>
 				</div>
 			</section>
 			<section id="deployment">
 				<h3 class="sub-title">
-					Cryptik deployment process
+					iProland deployment process
 				</h3>
 				<div class="p-l-20">
 					<h4 class="mini-sub-title">
@@ -639,7 +735,7 @@
 			</section>
 			<section id="stack-use">
 				<h3 class="sub-title">
-					Stack We Used in Cryptik
+					Stack We Used in iProland
 				</h3>
 				<ol>
 					<li>Yarn Workspace.</li>
